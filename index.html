@@ -1,55 +1,58 @@
-import React, {Component} from 'react'
-"Hello World"
-"This is the first day of Web Development June 29, 2020"
-<!Doctype html>
+<!DOCTYPE html>
 
 <html>
-<body>
-
-<head>
-</head>
-
-<p><a href="https://www.youtube.com/watch?v=B5zJIgYYUek&t=581s">"Random Funny Video"</a></p>
-
-<p>"Geometry Content Below"</p>
-<p><a href="https://www.youtube.com/watch?time_continue=9&v=UrDfi81F7ks&feature=emb_logo">"How to copy an angle using a compass"</a></p>
-<p><a href="https://www.youtube.com/watch?v=vT8f5QgH9I8&feature=emb_logo">"How to draw a perpindicular line from a given point on a given line"</a></p>
-<p><a href="https://www.youtube.com/watch?v=3v5HL5nmrJE&feature=emb_logo">"Constructing the perpindicular bisector of a line segment"</a></p>
-<p><a href="https://www.youtube.com/watch?v=eaAJEp3ElnM&feature=emb_logo">"How to draw a triangle knowing the length of its 3 sides"</a></p>
-<p><a href="https://www.youtube.com/watch?v=06uGNEZCIBI&feature=emb_logo">"How to draw a triangle knowing the angle bisector of any angle"</a></p>
-<p><a href="https://www.youtube.com/watch?v=PCr8rfRCNnc&feature=emb_logo">"How to draw a perpindicular line through a point using a compass"</a></p>
-
-<div style="text-align:center;padding:1em 0;"> <h3><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/5392171"><span style="color:rgb(102, 102, 102);">Current local time in</span><br />San Jose, United States</a></h3> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=America%2FLos_Angeles" width="100%" height="115" frameborder="0" seamless></iframe> </div>
-
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Button from './Button'
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button/>
-      </header>
-    </div>
-  );
+<script>
+    function returnrandom() {
+    var responses = ["It is certain!",
+"It is decidedly so",
+"Without a doubt!",
+"Yes definitely!",
+"You may rely on it",
+"As I see it, yes.",
+"Most likely",
+"Outlook good",
+"Yes!",
+"Signs point to yes",
+"Reply hazy try again",
+"Ask again later",
+"Better not tell you now",
+"Cannot predict now",
+"Concentrate and ask again",
+"Don't count on it",
+"My reply is NO!",
+"My sources say no",
+"Outlook not so good",
+"Very doubtful",
+"Yes, in due time",
+"Definitely not",
+"You will have to wait",
+"I have my doubts",
+"Outlook so so",
+"Looks good to me",
+"Who knows?",
+"Looking good!",
+"Probably",
+"Are you kidding?",
+"Go for it!",
+"Don't bet on it",
+"Forget about it."]
+document.getElementById('question').value = responses[Math.round(Math.random() * responses.length) - 1];
 }
 
-export default App;
-//<Button/> 
+function checkquestion(){
+    if (document.getElementById('question').value.split("")[document.getElementById('question').value.length - 1] == "?"){
+        returnrandom()
+    
+    }
+    else{
+        document.getElementById('question').value = "Not a question"
+    }   
+}
 
-<body>
-    </html>
+</script>
+<div style = "margin: 0; position: absolute; top: 30%; left: 25%;">
+    <p style = "font-size: 40px; text-align: center">Magic 8 Ball</p>
+    <input style = "width: 500px; height: 100px; font-size: 40px; padding: 10px" id = "question" placeholder = "Type a question"></input> 
+    <button style = " height: 100px; font-size: 40px; padding: 10px; background-color: rgb(71, 114, 255); color: white" onclick = "checkquestion()">find answer</button>
+</div>
+</html>
